@@ -17,6 +17,7 @@ export default function NewStoryPage() {
     
     request.then(response => {
       alert("Post salvo com sucesso!");
+      history.push('/');
     });
 
     request.catch(error => {

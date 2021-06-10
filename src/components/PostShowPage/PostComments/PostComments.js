@@ -30,7 +30,7 @@ export default function PostComments({ postId }) {
     //   author: 'Maria',
     //   content: 'Como faz pra dar palmas?'
     // }])
-  }, [postId]);
+  }, [comments]);
   
   return (
     <Container>
