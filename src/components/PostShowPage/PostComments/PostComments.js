@@ -18,18 +18,6 @@ export default function PostComments({ postId }) {
     request.catch(error => {
       alert("Algo deu errado com sua requisição, por favor, tente novamente.");
     });
-
-    // setComments([{
-    //   id: 1,
-    //   postId: postId,
-    //   author: 'João',
-    //   content: 'Muito bom esse post! Tá de parabéns'
-    // }, {
-    //   id: 2,
-    //   postId: postId,
-    //   author: 'Maria',
-    //   content: 'Como faz pra dar palmas?'
-    // }])
   }, [comments]);
   
   return (

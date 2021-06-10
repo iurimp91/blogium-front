@@ -24,14 +24,6 @@ export default function PostShowPage() {
     request.catch(error => {
       alert("Algo deu errado com sua requisição, por favor, tente novamente.");
     });
-
-    // setPost({
-    //   id: 1,
-    //   title: 'Hello World',
-    //   coverUrl: 'https://miro.medium.com/max/1024/1*OohqW5DGh9CQS4hLY5FXzA.png',
-    //   contentPreview: 'Esta é a estrutura de um post esperado pelo front-end',
-    //   content: 'Este é o conteúdo do post, o que realmente vai aparecer na página do post...'
-    // });
   }, [postId]);
 
   function onEditButtonClick() {
@@ -39,8 +31,16 @@ export default function PostShowPage() {
   }
 
   function onDeleteButtonClick() {
-    alert('No futuro, ao clicar neste botão o post vai ser excluído de verdade :)');
-    history.push('/');
+    const request = axios.delete(`http://localhost:5000/posts/${postId}`);
+    
+    request.then(response => {
+      alert("Post deletado com sucesso!");
+      history.push('/');
+    });
+
+    request.catch(error => {
+      alert("Algo deu errado com sua requisição, por favor, tente novamente.");
+    });
   }
 
   if (!post) return <Spinner />;

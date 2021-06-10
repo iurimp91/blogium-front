@@ -15,15 +15,6 @@ export default function HomePage() {
     request.catch(error => {
       alert("Algo deu errado com sua requisição, por favor, tente novamente.");
     });
-
-    // setPosts([{
-    //   id: 1,
-    //   title: 'Hello World',
-    //   coverUrl: 'https://miro.medium.com/max/1024/1*OohqW5DGh9CQS4hLY5FXzA.png',
-    //   contentPreview: 'Esta é a estrutura de um post esperado pelo front-end',
-    //   content: 'Este é o conteúdo do post, o que realmente vai aparecer na página do post...',
-    //   commentCount: 2
-    // }]);
   }, []);
 
   return (

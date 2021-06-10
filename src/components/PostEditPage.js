@@ -29,7 +29,19 @@ export default function PostEditPage() {
     setContent(post.content);
   }, [postId]);
 
-  function onPostSaveButtonClick() {}
+  function onPostSaveButtonClick() {
+    const body = { title, content, coverUrl };
+    const request = axios.put(`http://localhost:5000/posts/${postId}`, body);
+
+    request.then(response => {
+      alert("Post alterado com sucesso!");
+      history.push(`/posts/${postId}`);
+    });
+
+    request.catch(error => {
+      alert("Algo deu errado com sua requisição, por favor, tente novamente.");
+    });
+  }
 
   if (!post || !content) return <Spinner />;
 
