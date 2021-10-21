@@ -38,3 +38,6 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+
+console.log("oi");
